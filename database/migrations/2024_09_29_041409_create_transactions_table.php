@@ -13,6 +13,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('payer');
             $table->uuid('payee');
+            $table->decimal('amount',10,2);
 
             $table->foreign('payer')
                   ->references('id')
