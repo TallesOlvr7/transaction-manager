@@ -11,7 +11,7 @@ class WalletFactory extends Factory
     {
         return [
             'amount'=>100.00,
-            'user_id'=>'9d1f8f64-8366-47b9-acda-31f7f82de29c'
+            'user_id'=>'9d204a19-53e0-44b4-b528-2a6ec7e98601'
         ];
     }
 }

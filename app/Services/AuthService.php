@@ -22,7 +22,7 @@ class AuthService
     {
         $userType = $this->userService->getType($loggedUser);
         if($userType === 'Customer'){
-            $loggedUser->createToken('token',['transation'])->plainTextToken;
+            return $loggedUser->createToken('token',['transaction:make'])->plainTextToken;
         }
         return $loggedUser->createToken('token')->plainTextToken;
     }
