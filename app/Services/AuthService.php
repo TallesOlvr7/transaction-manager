@@ -6,23 +6,20 @@ use Auth;
 use Illuminate\Foundation\Auth\User;
 class AuthService
 {
-    public function __construct(
-        protected UserService $userService,
-    )
-    {}
-    public function login(AuthLoginRequest $request):bool
+
+    public function login(AuthLoginRequest $request): bool
     {
-        if(!Auth::attempt($request->validated())){
+        if (!Auth::attempt($request->validated())) {
             return false;
         }
         return true;
     }
 
-    public function generateToken(User $loggedUser):string
+    public function generateToken(User $loggedUser): string
     {
-        $userType = $this->userService->getType($loggedUser);
-        if($userType === 'Customer'){
-            return $loggedUser->createToken('token',['transaction:make'])->plainTextToken;
+        $userType = $loggedUser->type;
+        if ($userType === 'Customer') {
+            return $loggedUser->createToken('token', ['transaction-create'])->plainTextToken;
         }
         return $loggedUser->createToken('token')->plainTextToken;
     }

@@ -2,16 +2,24 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class WalletFactory extends Factory
 {
-
+    private static $usedUsers = [];
     public function definition(): array
     {
+        $user = User::inRandomOrder()->first();
+
+        while (in_array($user->id, self::$usedUsers)) {
+            $user = User::inRandomOrder()->first();
+        }
+
+        self::$usedUsers[] = $user->id;
         return [
-            'amount'=>100.00,
-            'user_id'=>'9d204a19-53e0-44b4-b528-2a6ec7e98601'
+            'money' => 100.00,
+            'user_id' => $user->id
         ];
     }
 }
