@@ -10,7 +10,7 @@ Route::prefix('v1')->group(function(){
     Route::middleware('auth:sanctum')->group(function(){
         Route::post('/logout',[AuthController::class, 'logout']);
     });
-    Route::middleware(['auth:sanctum', 'abilities:transaction-create'])->group(function(){
+    Route::middleware(['auth:sanctum', 'abilities:customer-token'])->group(function(){
         Route::post('/transfer', [TransactionController::class, 'create']);
     });
 });

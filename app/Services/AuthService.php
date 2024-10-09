@@ -19,8 +19,8 @@ class AuthService
     {
         $userType = $loggedUser->type;
         if ($userType === 'Customer') {
-            return $loggedUser->createToken('token', ['transaction-create'])->plainTextToken;
+            return $loggedUser->createToken('token', ['customer-token'])->plainTextToken;
         }
-        return $loggedUser->createToken('token')->plainTextToken;
+        return $loggedUser->createToken('token',['retailer-token'])->plainTextToken;
     }
 }

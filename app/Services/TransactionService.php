@@ -11,31 +11,32 @@ class TransactionService
     public function __construct(
         protected WalletService $walletService,
         protected TransactionRepository $transactionRepository,
-    ) {
-    }
+    ) 
+    {}
+
     public function makeTransaction(string $payerId, array $request):Transaction
     {
         $this->transactionVerifications($payerId, $request['value']);
-        $this->transferMoney($payerId, $request);
+        if(!$this->transferMoney($payerId, $request)){
+            throw new \Exception("Erro ao fazer transação.");
+        }
         return $this->transactionRepository->create($payerId,$request);
     }
 
-    public function transferMoney(string $payerId, array $request): void
+    public function transferMoney(string $payerId, array $request):bool
     {
-        try {
             DB::beginTransaction();
             $debitSuccess = $this->walletService->debitUser($payerId, $request['value']);
             $creditSuccess = $this->walletService->creditUser($request['payee'], $request['value']);
 
             if ($debitSuccess && $creditSuccess) {
                 DB::commit();
+                return true;
             }
+
             DB::rollback();
-        }catch(\Exception $e){
-            DB::rollback();
-            throw new \Exception("Erro ao fazer transação.");
-        }
-    }
+            return false;
+    }        
 
     public function transactionVerifications(string $payerId, float $value): void
     {

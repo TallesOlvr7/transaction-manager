@@ -14,8 +14,8 @@ class TransactionController extends Controller
 {
     public function __construct(
         protected TransactionService $transactionService
-    ) {
-    }
+    )
+    {}
     public function create(TransactionCreateRequest $request):JsonResponse
     {
         $payerId = Auth::id();
