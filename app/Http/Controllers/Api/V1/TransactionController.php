@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\DTOs\TransactionDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TransactionCreateRequest;
 use App\Http\Resources\TransactionResource;
@@ -19,9 +20,11 @@ class TransactionController extends Controller
     public function create(TransactionCreateRequest $request):JsonResponse
     {
         $payerId = Auth::id();
+        $data = $request->validated();
+        $transactionDTO = new TransactionDTO($payerId,$data['payee'],$data['value']);
 
         try {
-            $transaction = $this->transactionService->makeTransaction($payerId, $request->validated());
+            $transaction = $this->transactionService->makeTransaction($transactionDTO);
                 
             return response()->json(
                 new TransactionResource($transaction),200

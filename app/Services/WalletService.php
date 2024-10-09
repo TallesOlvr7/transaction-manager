@@ -15,13 +15,13 @@ class WalletService
         return $this->walletRepository->getMoneyByUserId($id);
     }
 
-    public function debitUser(string $id, float $value):bool
+    public function debitUser(string $payerId, float $value):bool
     {
-        return $this->walletRepository->decrement($id, $value);
+        return $this->walletRepository->decrement($payerId, $value);
     }
 
-    public function creditUser(string $id, float $value):bool
+    public function creditUser(string $payeeId, float $value):bool
     {
-        return $this->walletRepository->increment($id, $value);
+        return $this->walletRepository->increment($payeeId , $value);
     }
 }
