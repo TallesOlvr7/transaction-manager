@@ -10,9 +10,9 @@ class WalletService
     )
     {}
 
-    public function getMoney(string $id):float
+    public function getMoney(string $userId):float
     {
-        return $this->walletRepository->getMoneyByUserId($id);
+        return $this->walletRepository->getMoneyByUserId($userId);
     }
 
     public function debitUser(string $payerId, float $value):bool
