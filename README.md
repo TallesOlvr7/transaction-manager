@@ -1,16 +1,16 @@
 ## Teste Técnico - Picpay Simplificado
 
-API Restful desenvolvida com **PHP**, utilizando **Laravel**. O objetivo da aplicação é emular o fluxo de uma transação entre dois usuários.
-Link do repositório explicando o teste:(https://github.com/PicPay/picpay-desafio-backend).
+API Restful desenvolvida com **PHP**, utilizando **Laravel**. O objetivo da aplicação é emular o fluxo de uma transação entre dois usuários.** (\**)
+Link do repositório explicando o teste:(https://github.com/PicPay/picpay-desafio-backend).** (\**)
 
-##Tecnologias utilizadas
+##Tecnologias utilizadas** (\**)
 
--PHP
--Laravel
--MySql
--Sanctum
--Insomnia
--Git
+-PHP** (\**)
+-Laravel** (\**)
+-MySql** (\**)
+-Sanctum** (\**)
+-Insomnia** (\**)
+-Git** (\**)
 
 ## Learning Laravel
 
