@@ -6,7 +6,7 @@ Link do repositório explicando o teste:(https://github.com/PicPay/picpay-desafi
 
 ## Tecnologias utilizadas 
 
--PHP\
+-PHP
 -Laravel\
 -MySql\
 -Sanctum\
