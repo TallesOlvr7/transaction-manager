@@ -2,7 +2,7 @@
 
 API Restful desenvolvida com **PHP**, utilizando **Laravel**. O objetivo da aplicação é emular o fluxo de uma transação entre dois usuários.
 
-Link do repositório explicando o teste:(https://github.com/PicPay/picpay-desafio-backend). 
+Link do repositório explicando o teste: (https://github.com/PicPay/picpay-desafio-backend). 
 
 ## Tecnologias utilizadas 
 
@@ -18,6 +18,7 @@ Link do repositório explicando o teste:(https://github.com/PicPay/picpay-desafi
 ### Usuários
 
 -Customer: Usuário do tipo "Customer", o mesmo pode: fazer o login, logout e transações.\
+
 -Retailer: Usuário do tipo "Retailer", ele pode fazer seu login e logout, porém o mesmo não tem permissão para o envio de transações.
 
 
