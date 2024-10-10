@@ -13,13 +13,45 @@ Link do repositório explicando o teste: (https://github.com/PicPay/picpay-desaf
 -Insomnia\
 -Git
 
-## Estruturação
+## Endpoints
 
-### Usuários
+1. `POST /login`
 
--Customer: Usuário do tipo "Customer", o mesmo pode: fazer o login, logout e transações.
+  - **Descrição**: Autentica o usuário.
+  - **Corpo**:
+  ```json
+  {
+    "email": "example@gmail.com",
+    "password": "userPassword123"
+  }
+  ```
 
--Retailer: Usuário do tipo "Retailer", ele pode fazer seu login e logout, porém o mesmo não tem permissão para o envio de transações.
+  
+2. `POST /logout`
+
+  - **Descrição**: Destrói o token de autenticação do usuário.
+  - **Corpo**:
+  ```json
+  {
+    "email": "example@gmail.com",
+    "password": "userPassword123"
+  }
+  ```
+3. `POST /transfer`
+
+  - **Descrição**: Destrói o token de autenticação do usuário.
+  - **Corpo**:
+  ```json
+  {
+    "email": "example@gmail.com",
+    "password": "userPassword123"
+  }
+  ```
+  
+
+  
+
+  
 
 
 
