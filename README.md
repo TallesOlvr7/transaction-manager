@@ -8,6 +8,7 @@ Link do repositório explicando o teste: (https://github.com/PicPay/picpay-desaf
 
 -PHP\
 -Laravel\
+
 -MySql\
 -Sanctum\
 -Insomnia\
@@ -55,13 +56,4 @@ Tendo como base o teste citado, tomei decisões com o intuito de expandir a API 
 
 -**Uuid**: Utilização de Uuid para as chaves primárias com o intuito de melhorar a segurança.\
 -**Autenticação**: Autenticação de usuários com o **Laravel Sanctum**. Onde apenas quem está autenticado pode fazer a transação.\
--**E-Mail**: No teste tem um simulador de envio de e-mail, porém o mesmo aparenta não estar ativo. Por esse motivo não foi implementado.\
-
-  
-
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-**E-Mail**: No teste tem um simulador de envio de e-mail, porém o mesmo aparenta não estar ativo. Por esse motivo não foi implementado
