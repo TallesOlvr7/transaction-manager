@@ -8,7 +8,6 @@ Link do repositório explicando o teste: (https://github.com/PicPay/picpay-desaf
 
 -PHP\
 -Laravel\
-
 -MySql\
 -Sanctum\
 -Insomnia\
