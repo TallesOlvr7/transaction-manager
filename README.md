@@ -39,57 +39,26 @@ Link do repositório explicando o teste: (https://github.com/PicPay/picpay-desaf
   ```
 3. `POST /transfer`
 
-  - **Descrição**: Destrói o token de autenticação do usuário.
+  - **Descrição**: Faz a transação entre dois usuários.
   - **Corpo**:
   ```json
-  {
-    "email": "example@gmail.com",
-    "password": "userPassword123"
-  }
+{
+	"payer": "9d337829-5de1-489d-9612-9dd4f584054e",
+	"payee": "9d337829-4cae-436c-97c5-c120532a2e61",
+	"value": 10
+}
   ```
-  
+
+##  Mudanças
+
+Tendo como base o teste citado, tomei decisões com o intuito de expandir a API desenvolvida. Algumas adições foram:
+
+-**Uuid**: Utilização de Uuid para as chaves primárias com o intuito de melhorar a segurança.\
+-**Autenticação**: Autenticação de usuários com o **Laravel Sanctum**. Onde apenas quem está autenticado pode fazer a transação.\
+-**E-Mail**: No teste tem um simulador de envio de e-mail, porém o mesmo aparenta não estar ativo. Por esse motivo não foi implementado.\
 
   
 
-  
-
-
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
